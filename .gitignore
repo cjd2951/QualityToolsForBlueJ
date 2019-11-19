@@ -3,6 +3,10 @@
 # Ignore Gradle project-specific cache directory
 .gradle
 
+# IntelliJ files
+.idea
+*.iml
+
 # Log file
 *.log
 
