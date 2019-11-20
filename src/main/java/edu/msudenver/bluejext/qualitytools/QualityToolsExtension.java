@@ -11,7 +11,7 @@ import java.net.URL;
  * @see bluej.extensions.event.PackageListener
  * @see bluej.extensions.Extension
  */
-public class Library extends Extension implements PackageListener {
+public class QualityToolsExtension extends Extension implements PackageListener {
 
     /**
      * @param bluej instance of BlueJ this extension should register with
@@ -82,7 +82,7 @@ public class Library extends Extension implements PackageListener {
     public URL getURL() {
         try {
             //TODO make this URL a project property
-            return new URL("https://github.com/MetroCS/QualityToolsForBlueJ");
+            return new URL("https://metrocs.github.io/QualityToolsForBlueJ");
         } catch (Exception e) {
             // The link is either dead or otherwise unreachable
             System.out.println("Quality Tools: getURL: Exception=" + e.getMessage());

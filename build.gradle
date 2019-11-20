@@ -62,7 +62,7 @@ jacocoTestReport {
 
 jar {
     manifest {
-        attributes "Main-Class": "edu.msudenver.bluejext.qualitytools.Library"
+        attributes "Main-Class": "edu.msudenver.bluejext.qualitytools.QualityToolsExtension"
     }
 
     from {
