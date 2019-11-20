@@ -13,6 +13,11 @@ import java.net.URL;
  */
 public class QualityToolsExtension extends Extension implements PackageListener {
 
+    private final String PROJECT_NAME = "Quality Tools";
+    private final String PROJECT_DESCRIPTION = "BlueJ extension that integrates quality assessment tools";
+    private final String PROJECT_URL = "https://metrocs.github.io/QualityToolsForBlueJ";
+    private final String PROJECT_VERSION = "0.0.01";
+
     /**
      * @param bluej instance of BlueJ this extension should register with
      */
@@ -45,8 +50,7 @@ public class QualityToolsExtension extends Extension implements PackageListener 
      */
     @Override
     public String getVersion() {
-        //TODO make this version a project property
-        return ("0.0.01");
+        return PROJECT_VERSION;
     }
 
     /**
@@ -54,8 +58,7 @@ public class QualityToolsExtension extends Extension implements PackageListener 
      */
     @Override
     public String getName() {
-        //TODO make this name a project property
-        return ("Quality Tools");
+        return PROJECT_NAME;
     }
 
     /**
@@ -71,8 +74,7 @@ public class QualityToolsExtension extends Extension implements PackageListener 
      */
     @Override
     public String getDescription() {
-        //TODO make this description a project property
-        return ("BlueJ extension that integrates quality assessment tools");
+        return PROJECT_DESCRIPTION;
     }
 
     /**
@@ -81,11 +83,10 @@ public class QualityToolsExtension extends Extension implements PackageListener 
     @Override
     public URL getURL() {
         try {
-            //TODO make this URL a project property
-            return new URL("https://metrocs.github.io/QualityToolsForBlueJ");
+            return new URL(PROJECT_URL);
         } catch (Exception e) {
             // The link is either dead or otherwise unreachable
-            System.out.println("Quality Tools: getURL: Exception=" + e.getMessage());
+            System.out.println(PROJECT_NAME + ": getURL: Exception=" + e.getMessage());
             return null;
         }
     }
