@@ -4,6 +4,8 @@ import bluej.extensions.*;
 import bluej.extensions.event.*;
 
 import java.net.URL;
+import javax.swing.*;
+import java.awt.event.*;
 
 /**
  * This is the starting point of the BlueJ Extension
@@ -22,7 +24,13 @@ public class QualityToolsExtension extends Extension implements PackageListener 
      * @param bluej instance of BlueJ this extension should register with
      */
     @Override
-    public void startup(BlueJ bluej) {}
+    public void startup(BlueJ bluej) {
+
+        // Register a "preferences" panel generator
+        Preferences myPreferences = new Preferences(bluej);
+        bluej.setPreferenceGenerator(myPreferences);
+
+    }
 
     /**
      * @param ev package event containing BlueJ event information
@@ -89,5 +97,44 @@ public class QualityToolsExtension extends Extension implements PackageListener 
             System.out.println(PROJECT_NAME + ": getURL: Exception=" + e.getMessage());
             return null;
         }
+    }
+}
+
+/**
+ * Create a Preference Panel located in the BlueJ application
+ * BlueJ -> Preferences -> Extensions Tab
+ */
+class Preferences implements PreferenceGenerator
+{
+    private JPanel myPanel;
+    private JTextField color;
+    private BlueJ bluej;
+    public static final String PROFILE_LABEL="Quality-Analysis-Tools";
+
+    // Construct the panel, and initialise it from any stored values
+    public Preferences(BlueJ bluej)
+    {
+        this.bluej = bluej;
+        myPanel = new JPanel();
+        myPanel.add (new JLabel ("Quality Analysis Tools"));
+        color = new JTextField (40);
+        myPanel.add (color);
+        // Load the default value
+        loadValues();
+    }
+
+    public JPanel getPanel () { return myPanel; }
+
+    public void saveValues ()
+    {
+        // Save the preference value in the BlueJ properties file
+        bluej.setExtensionPropertyString(PROFILE_LABEL, color.getText());
+    }
+
+    public void loadValues ()
+    {
+        // Load the property value from the BlueJ proerties file,
+        // default to an empty string
+        color.setText(bluej.getExtensionPropertyString(PROFILE_LABEL,""));
     }
 }
