@@ -5,7 +5,6 @@ import bluej.extensions.event.*;
 
 import java.net.URL;
 import javax.swing.*;
-import java.awt.event.*;
 
 /**
  * This is the starting point of the BlueJ Extension
@@ -25,11 +24,9 @@ public class QualityToolsExtension extends Extension implements PackageListener 
      */
     @Override
     public void startup(BlueJ bluej) {
-
         // Register a "preferences" panel generator
         Preferences myPreferences = new Preferences(bluej);
         bluej.setPreferenceGenerator(myPreferences);
-
     }
 
     /**
@@ -100,41 +97,48 @@ public class QualityToolsExtension extends Extension implements PackageListener 
     }
 }
 
+
 /**
- * Create a Preference Panel located in the BlueJ application
- * BlueJ -> Preferences -> Extensions Tab
+ * Register an instance of PreferenceGenerator with the BlueJ proxy object
+ *
+ * @see bluej.extensions.PreferenceGenerator
  */
 class Preferences implements PreferenceGenerator
-{
-    private JPanel myPanel;
-    private JTextField color;
-    private BlueJ bluej;
-    public static final String PROFILE_LABEL="Quality-Analysis-Tools";
-
-    // Construct the panel, and initialise it from any stored values
-    public Preferences(BlueJ bluej)
     {
-        this.bluej = bluej;
-        myPanel = new JPanel();
-        myPanel.add (new JLabel ("Quality Analysis Tools"));
-        color = new JTextField (40);
-        myPanel.add (color);
-        // Load the default value
-        loadValues();
-    }
+        /** The Jpanel comprising this Preference */
+        private JPanel myPanel;
+        /** Invokes BlueJ proxy object for this Preference */
+        private BlueJ bluej;
 
-    public JPanel getPanel () { return myPanel; }
-
-    public void saveValues ()
-    {
-        // Save the preference value in the BlueJ properties file
-        bluej.setExtensionPropertyString(PROFILE_LABEL, color.getText());
+        /**
+         * Instantiate an object of the Preferences class and then register
+         * it with the BlueJ proxy object.
+         *
+         * @param bluej  BlueJ proxy object
+         */
+        public Preferences(BlueJ bluej)
+        {
+            this.bluej = bluej;
+            myPanel = new JPanel();
+            myPanel.add (new JLabel ("Quality Analysis Tools"));
+            // Load the JPanel preference data
+            loadValues();
+        }
+        /**
+         * @return JPanel preferences object
+         */
+        public JPanel getPanel () {
+            return myPanel;
+        }
+        /**
+         * Save the preference data for JPanel
+         */
+        public void saveValues () {
+        }
+        /**
+         * Load the preference data for JPanel
+         */
+        public void loadValues () {
+            //TODO implement JPanel options
+        }
     }
-
-    public void loadValues ()
-    {
-        // Load the property value from the BlueJ proerties file,
-        // default to an empty string
-        color.setText(bluej.getExtensionPropertyString(PROFILE_LABEL,""));
-    }
-}
