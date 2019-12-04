@@ -14,7 +14,7 @@ The question we are posing is: what is the best way to go about connecting these
 
 The tools intended for this extension are many and they are of many different flavors. Is it a command line tool?  What is the file extension?  Was it developed in Java or some other language?
 
-The Tool Encapsulation class is intended to make all of these questions irrelevant to users, as we will give developers one convenient class from which to get any tool working with the Quality Tools for BlueJ Extension.
+The [Tool Encapsulation class](ToolEncapsulation.java) is intended to make all of these questions irrelevant to users, as we will give developers one convenient class from which to get any tool working with the Quality Tools for BlueJ Extension.
 
 ## Think of this class as a kind of adapter
 
