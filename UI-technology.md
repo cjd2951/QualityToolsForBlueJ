@@ -27,3 +27,19 @@ Abstract Window Toolkit (AWT) is a well known Java framework for creating graphi
 AWT is a part of Oracle's Java Foundation Classes, which makes it a trusted choice for creating graphical user interfaces. Because it's backed by Oracle, there is adequate documentation for maintainers to reference.
 
 [https://docs.oracle.com/javase/8/docs/technotes/guides/awt/](https://docs.oracle.com/javase/8/docs/technotes/guides/awt/)
+
+---
+
+# JavaFX
+
+## A brief description of the technology
+
+## Reason(s) why this technology is an appropriate possibility for this project
+* the APIs are designed to be a friendly alternative to Java Virtual Machine (Java VM) languages, such as JRuby and Scala.
+* JavaFX offers WebView, a web component that uses WebKitHTML technology to make it possible to embed web pages within a JavaFX application. JavaScript running in WebView can call Java APIs, and Java APIs can call JavaScript running in WebView.
+* existing Swing applications can be updated with new JavaFX features, such as rich graphics media playback and embedded Web content.
+* JavaFX provides all the major UI controls required to develop a full-featured application. Components can be skinned with standard Web technologies such as CSS.
+
+With JavaFX, you can build many types of applications. Typically, they are network-aware applications that are deployed across multiple platforms and display information in a high-performance modern user interface that features audio, video, graphics, and animation.
+
+[Oracle: What is JavaFX?](https://docs.oracle.com/javafx/2/overview/jfxpub-overview.htm)
