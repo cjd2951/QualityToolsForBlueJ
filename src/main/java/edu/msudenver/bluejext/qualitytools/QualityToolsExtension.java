@@ -101,6 +101,15 @@ public class QualityToolsExtension extends Extension implements PackageListener 
 /**
  * Register an instance of PreferenceGenerator with the BlueJ proxy object
  *
+ * @version 0.1 12 Dec 2019
+ *
+ * @author Derek Holsapple  
+ * @author Eric Armstrong
+ * @author Ahmed Samay
+ * @author Ren White
+ * @author Shae Cloud
+ * @author Nate Prudhomme
+ * 
  * @see bluej.extensions.PreferenceGenerator
  */
 class Preferences implements PreferenceGenerator
@@ -125,18 +134,22 @@ class Preferences implements PreferenceGenerator
             loadValues();
         }
         /**
-         * @return JPanel preferences object
+         * Bluej will call this method to get the panel where preferences 
+         * for this extension are         
+         *
+         * @return JPanel to contain preference data
          */
         public JPanel getPanel () {
             return myPanel;
         }
-        /**
-         * Save the preference data for JPanel
+        /**   
+         * Method to save values from the preference panel into its 
+         * internal state
          */
         public void saveValues () {
         }
         /**
-         * Load the preference data for JPanel
+         * Method to load its current values into its preference panel
          */
         public void loadValues () {
             //TODO implement JPanel options
