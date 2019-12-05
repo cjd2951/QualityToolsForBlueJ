@@ -1,5 +1,3 @@
-package edu.msudenver.bluejext.qualitytools.api;
-
 /**
  * This file is intended to be the starting point to encapsulate one tool that 
  * will then be used by the QualityTools extension.
