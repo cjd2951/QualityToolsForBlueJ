@@ -33,6 +33,7 @@ AWT is a part of Oracle's Java Foundation Classes, which makes it a trusted choi
 # JavaFX
 
 ## A brief description of the technology
+JavaFX is an open source platform for creating graphical user interfaces.
 
 ## Reason(s) why this technology is an appropriate possibility for this project
 * the APIs are designed to be a friendly alternative to Java Virtual Machine (Java VM) languages, such as JRuby and Scala.
